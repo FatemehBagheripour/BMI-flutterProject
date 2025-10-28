@@ -37,6 +37,124 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               ////        // sater aval
+              Row(
+                children: [
+                  //                 //soton cklid aval
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFF24263B),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.white10,
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      padding: EdgeInsets.all(2),
+
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            firstColor = Color(0xFFE83D67);
+                            secondColor = Colors.white;
+                          });
+                        },
+
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            Color(0xFF24263B),
+                          ),
+                          shape: WidgetStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          minimumSize: WidgetStateProperty.all(Size(145, 160)),
+                        ),
+                        child: Column(
+                          children: [
+                            //Padding(padding: EdgeInsetsGeometry.all(1.0)),
+                            Image.asset(
+                              'images/material-symbols_male.png',
+                              color: firstColor,
+                            ),
+
+                            Text(
+                              'Male',
+                              style: TextStyle(color: firstColor, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  ////                  // soton cklid dovom
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFF24263B),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.white10,
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      padding: EdgeInsets.all(2),
+
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            firstColor = Colors.white;
+                            secondColor = Color(0xFFE83D67);
+                          });
+                        },
+
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            Color(0xFF24263B),
+                          ),
+                          shape: WidgetStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          minimumSize: WidgetStateProperty.all(Size(145, 160)),
+                        ),
+                        child: Column(
+                          children: [
+                            //Padding(padding: EdgeInsetsGeometry.all(1.0)),
+                            Image.asset(
+                              'images/material-symbols_female.png',
+                              color: secondColor,
+                            ),
+
+                            Text(
+                              'Female',
+                              style: TextStyle(
+                                color: secondColor,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
 
             ],
           ),
