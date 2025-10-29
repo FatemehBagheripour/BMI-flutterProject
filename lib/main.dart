@@ -155,6 +155,61 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
 
+              ////        sater dovome ; person height
+              Container(
+                height: 170,
+                decoration: BoxDecoration(
+                  color: Color(0xFF24263B),
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.white10,
+                      offset: Offset(2, 2),
+                      blurRadius: 8,
+                    ),
+                  ],
+                ),
+
+                margin: EdgeInsets.fromLTRB(8, 15, 10, 6),
+                padding: EdgeInsets.all(2),
+
+                child: Column(
+                  children: [
+                    SizedBox(height: 30),
+                    Text(
+                      'Height',
+                      style: TextStyle(color: Color(0xFF8B8C9E), fontSize: 20),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '${_currentHeightSliderValue.round().toString()} cm',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    SizedBox(height: 10),
+
+                    Slider(
+                      padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+                      value: _currentHeightSliderValue,
+                      min: 50,
+                      max: 250,
+                      activeColor: Color(0xFFE83D67),
+                      label: _currentHeightSliderValue.round().toString(),
+
+                      onChanged: (double value) {
+                        setState(() {
+                          _currentHeightSliderValue = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+
 
             ],
           ),
@@ -166,6 +221,7 @@ class _MyAppState extends State<MyApp> {
 
 ButtonStyle iconButtonStyle() {
   return ButtonStyle(
+
     backgroundColor: WidgetStateProperty.all(Color(0xff8B8C9E)),
     shape: WidgetStateProperty.all(
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
