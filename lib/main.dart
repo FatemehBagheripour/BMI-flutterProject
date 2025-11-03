@@ -213,7 +213,141 @@ class _MyAppState extends State<MyApp> {
               ),
 
               //// third row; person weight and age
+              Row(
+                children: [
+                  //weight box
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF24263B),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.white10,
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Weight',
+                            style: TextStyle(
+                              color: Color(0xFF8B8C9E),
+                              fontSize: 20,
+                            ),
+                          ),
 
+                          Text(
+                            _currentWeight.toString(),
+                            style: TextStyle(
+                              color: Color(0xFF8B8C9E),
+                              fontSize: 40,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              //to decrease
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _currentWeight-=1;
+                                  });
+                                },
+                                icon: Icon(Icons.remove),
+                                style: iconButtonStyle(),
+                              ),
+                              SizedBox(width: 20),
+                              //to increase
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _currentWeight+=1;
+                                  });
+                                },
+                                icon: Icon(Icons.add),
+                                style: iconButtonStyle(),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 5),
+                  // age box
+                  Flexible(
+                    fit: FlexFit.tight,
+
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF24263B),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.white10,
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Age',
+                            style: TextStyle(
+                              color: Color(0xFF8B8C9E),
+                              fontSize: 20,
+                            ),
+                          ),
+
+                          Text(
+                            _currentAge.toString(),
+                            style: TextStyle(
+                              color: Color(0xFF8B8C9E),
+                              fontSize: 40,
+                            ),
+                          ),
+                          //button rows
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _currentAge-=1;
+                                  });
+                                },
+                                icon: Icon(Icons.remove),
+                                style: iconButtonStyle(),
+                              ),
+                              SizedBox(width: 20),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _currentAge+=1;
+                                  });
+                                },
+                                icon: Icon(Icons.add),
+                                style: iconButtonStyle(),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
 
