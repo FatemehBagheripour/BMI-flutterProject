@@ -16,30 +16,32 @@ class _MyAppState extends State<MyApp> {
   Color secondColor = Colors.white;
 
   double _currentHeightSliderValue = 150;
+  double _currentWeight=50;
+  int _currentAge=20;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('BMI Calculator'),
-          titleTextStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.w600,
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('BMI Calculator'),
+            titleTextStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+            ),
+            backgroundColor: Color(0xFF24263B),
+            elevation: 4,
           ),
-          backgroundColor: Color(0xFF24263B),
-          elevation: 4,
-        ),
-        body: Container(
-          color: Color(0xFF1E1E1E),
-          child: Column(
+          backgroundColor: Color(0xFF1E1E1E),
+          body: Column(
             children: [
-              ////        // sater aval
+              ////        // first row , person gender
               Row(
                 children: [
-                  //                 //soton cklid aval
+                  //                 //male button
                   Flexible(
                     fit: FlexFit.tight,
                     child: Container(
@@ -55,7 +57,7 @@ class _MyAppState extends State<MyApp> {
                         ],
                       ),
 
-                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 8),
                       padding: EdgeInsets.all(2),
 
                       child: TextButton(
@@ -94,7 +96,7 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                   ),
-                  ////                  // soton cklid dovom
+                  ////                  // female button
                   Flexible(
                     fit: FlexFit.tight,
                     child: Container(
@@ -110,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                         ],
                       ),
 
-                      margin: EdgeInsets.fromLTRB(8, 10, 8, 6),
+                      margin: EdgeInsets.fromLTRB(8, 10, 8, 8),
                       padding: EdgeInsets.all(2),
 
                       child: TextButton(
@@ -155,7 +157,7 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
 
-              ////        sater dovome ; person height
+              ////       second row; person height
               Container(
                 height: 170,
                 decoration: BoxDecoration(
@@ -170,7 +172,7 @@ class _MyAppState extends State<MyApp> {
                   ],
                 ),
 
-                margin: EdgeInsets.fromLTRB(8, 15, 10, 6),
+                margin: EdgeInsets.fromLTRB(8, 15, 10, 8),
                 padding: EdgeInsets.all(2),
 
                 child: Column(
@@ -210,8 +212,30 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
 
+              //// third row; person weight and age
 
             ],
+          ),
+
+          bottomNavigationBar: ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(Color(0xffE83D67)),
+              fixedSize: WidgetStateProperty.all(Size(360, 100)),
+              shape: WidgetStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            child: Text(
+              'Calculate',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 32, color: Colors.white),
+            ),
           ),
         ),
       ),
@@ -221,7 +245,6 @@ class _MyAppState extends State<MyApp> {
 
 ButtonStyle iconButtonStyle() {
   return ButtonStyle(
-
     backgroundColor: WidgetStateProperty.all(Color(0xff8B8C9E)),
     shape: WidgetStateProperty.all(
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
