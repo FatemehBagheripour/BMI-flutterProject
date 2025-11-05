@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
   final bmiValue;
-  const ResultPage({super.key, required this.bmiValue});
+  final Age;
+  const ResultPage({super.key, required this.bmiValue,required this.Age});
 
 
 
@@ -11,6 +12,42 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     String situationMassage;
     String descriptionMassage;
+    if(Age<18){
+      if (bmiValue < 16) {
+        situationMassage = 'Underweight ;for this age($Age)';
+        descriptionMassage="You should eat more!";
+      }
+      else if (bmiValue <= 16 && bmiValue < 22) {
+        situationMassage = 'Normal ;for this age($Age)';
+        descriptionMassage="You Have a Normal Body Weight,Good Job.";
+      }
+      else if (bmiValue <= 22 && bmiValue < 25) {
+        situationMassage = 'Overweight ;for this age($Age)';
+        descriptionMassage="Try to exercise more.";
+      }
+      else {
+        situationMassage = 'Obese ;for this age($Age)';
+        descriptionMassage="You need to take care of your health.";
+      }
+    }
+    else {
+      if (bmiValue < 18.5) {
+        situationMassage = 'Underweight';
+        descriptionMassage="You should eat more!";
+      }
+      else if (bmiValue <= 18.5 && bmiValue < 25) {
+        situationMassage = 'Normal';
+        descriptionMassage="You Have a Normal Body Weight,Good Job.";
+      }
+      else if (bmiValue <= 25 && bmiValue < 30) {
+        situationMassage = 'Overweight';
+        descriptionMassage="Try to exercise more.";
+      }
+      else {
+        situationMassage = 'Obese';
+        descriptionMassage="You need to take care of your health.";
+      }
+    }
 
     return Scaffold(
         appBar: AppBar(
@@ -38,8 +75,25 @@ class ResultPage extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
-                  Text('data'),
+                  Text(situationMassage,style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                  ),),
                   SizedBox(height: 30,),
+
+                  Text(bmiValue,style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                  ),),
+                  SizedBox(height: 30,),
+
+                  Text(descriptionMassage,style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                  ),)
 
                 ],
               ),
