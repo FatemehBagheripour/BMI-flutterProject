@@ -375,7 +375,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultPage(bmiValue: bmi),
+                    builder: (context) => ResultPage(bmiValue: bmi,Age:_currentAge),
                   ),
                 );
               },
