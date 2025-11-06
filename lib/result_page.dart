@@ -12,16 +12,17 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     String statusMassage;
     String descriptionMassage;
+    String formattedBmi = bmiValue.toStringAsFixed(2);
     if(Age<18){
       if (bmiValue < 16) {
         statusMassage = 'Underweight ;for this age($Age)';
         descriptionMassage="You should eat more!";
       }
-      else if (bmiValue <= 16 && bmiValue < 22) {
+      else if (bmiValue >= 16 && bmiValue < 22) {
         statusMassage = 'Normal ;for this age($Age)';
         descriptionMassage="You Have a Normal Body Weight,Good Job.";
       }
-      else if (bmiValue <= 22 && bmiValue < 25) {
+      else if (bmiValue >= 22 && bmiValue < 25) {
         statusMassage = 'Overweight ;for this age($Age)';
         descriptionMassage="Try to exercise more.";
       }
@@ -35,11 +36,11 @@ class ResultPage extends StatelessWidget {
         statusMassage = 'Underweight';
         descriptionMassage="You should eat more!";
       }
-      else if (bmiValue <= 18.5 && bmiValue < 25) {
+      else if (bmiValue >=18.5 && bmiValue < 25) {
         statusMassage = 'Normal';
         descriptionMassage="You Have a Normal Body Weight,Good Job.";
       }
-      else if (bmiValue <= 25 && bmiValue < 30) {
+      else if (bmiValue >= 25 && bmiValue < 30) {
         statusMassage = 'Overweight';
         descriptionMassage="Try to exercise more.";
       }
@@ -82,7 +83,7 @@ class ResultPage extends StatelessWidget {
                   ),),
                   SizedBox(height: 30,),
 
-                  Text(bmiValue,style: TextStyle(
+                  Text(formattedBmi,style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
