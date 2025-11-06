@@ -90,6 +90,7 @@ class ResultPage extends StatelessWidget {
               SizedBox(height: 30,),
               SizedBox(
                 height: 450,
+                width: 450,
                 child: Card(
                   color: Color(0xFF333244),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
