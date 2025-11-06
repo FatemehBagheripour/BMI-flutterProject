@@ -41,19 +41,22 @@ class _HomePageState extends State<HomePage> {
       home: SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: Text('BMI Calculator'),
+              title: Text('BMI Calculator',textAlign: TextAlign.center,),
               titleTextStyle: TextStyle(
                 color: Colors.white,
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
               ),
               backgroundColor: Color(0xFF24263B),
+              shadowColor: Colors.black,
               elevation: 4,
+              centerTitle: true,
             ),
             backgroundColor: Color(0xFF1E1E1E),
             body: Column(
                 children: [
                   ////        // first row , person gender
+                  SizedBox(height: 20,),
                   Row(
                     children: [
                       //                 //male button
@@ -257,14 +260,15 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 20,
                                 ),
                               ),
-        
+                              // show tha user weight
                               Text(
                                 _currentWeight.toString(),
                                 style: TextStyle(
-                                  color: Color(0xFF8B8C9E),
+                                  color: Colors.white,
                                   fontSize: 40,
                                 ),
                               ),
+                              // the icon buttons to increase and decrease weight
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -324,15 +328,16 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 20,
                                 ),
                               ),
-        
+                              // show tha user weight
                               Text(
                                 _currentAge.toString(),
                                 style: TextStyle(
-                                  color: Color(0xFF8B8C9E),
+                                  color: Colors.white,
                                   fontSize: 40,
                                 ),
                               ),
                               //button rows
+                              // the icon buttons to increase and decrease weight
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -366,7 +371,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             
-        
+            // Calculate buttons bottom navigator
             bottomNavigationBar: ElevatedButton(
               onPressed: () {
                 double heightInMeters=_currentHeightSliderValue/100;
@@ -403,7 +408,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
+// the style of increase and decrease icon button
 ButtonStyle iconButtonStyle() {
   return ButtonStyle(
     backgroundColor: WidgetStateProperty.all(Color(0xff8B8C9E)),
