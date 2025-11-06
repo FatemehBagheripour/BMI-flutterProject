@@ -10,41 +10,41 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String situationMassage;
+    String statusMassage;
     String descriptionMassage;
     if(Age<18){
       if (bmiValue < 16) {
-        situationMassage = 'Underweight ;for this age($Age)';
+        statusMassage = 'Underweight ;for this age($Age)';
         descriptionMassage="You should eat more!";
       }
       else if (bmiValue <= 16 && bmiValue < 22) {
-        situationMassage = 'Normal ;for this age($Age)';
+        statusMassage = 'Normal ;for this age($Age)';
         descriptionMassage="You Have a Normal Body Weight,Good Job.";
       }
       else if (bmiValue <= 22 && bmiValue < 25) {
-        situationMassage = 'Overweight ;for this age($Age)';
+        statusMassage = 'Overweight ;for this age($Age)';
         descriptionMassage="Try to exercise more.";
       }
       else {
-        situationMassage = 'Obese ;for this age($Age)';
+        statusMassage = 'Obese ;for this age($Age)';
         descriptionMassage="You need to take care of your health.";
       }
     }
     else {
       if (bmiValue < 18.5) {
-        situationMassage = 'Underweight';
+        statusMassage = 'Underweight';
         descriptionMassage="You should eat more!";
       }
       else if (bmiValue <= 18.5 && bmiValue < 25) {
-        situationMassage = 'Normal';
+        statusMassage = 'Normal';
         descriptionMassage="You Have a Normal Body Weight,Good Job.";
       }
       else if (bmiValue <= 25 && bmiValue < 30) {
-        situationMassage = 'Overweight';
+        statusMassage = 'Overweight';
         descriptionMassage="Try to exercise more.";
       }
       else {
-        situationMassage = 'Obese';
+        statusMassage = 'Obese';
         descriptionMassage="You need to take care of your health.";
       }
     }
@@ -75,7 +75,7 @@ class ResultPage extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
-                  Text(situationMassage,style: TextStyle(
+                  Text(statusMassage,style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
